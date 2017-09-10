@@ -41,13 +41,14 @@
                         <td>
                             <a href="{{ URL::to('members/login/') }}/<% member.id %>" class="btn btn-danger" title="Login">
                                 <i class="glyphicon glyphicon-time"></i>
+                                 Login
                             </a>
                             <a class="btn btn-primary btn-md" href="{{ URL::to('members/update') }}/<% member.id %>" tooltip="Update"><i class="glyphicon glyphicon-user"></i> Update</a>
                             <a class="btn btn-success btn-md" href="{{ URL::to('members/packages') }}/<% member.id %>"><i class="glyphicon glyphicon-shopping-cart" tooltip="Packages"></i> Packages</a>
-                            <button type="button" class="btn btn-danger btn-md">
+                            <a class="btn btn-danger btn-md" href="{{ URL::to('members/delete') }}/<% member.id %>">
                                 <i class="glyphicon glyphicon-trash" tooltip="Delete"></i>
                                 Delete
-                            </button>
+                            </a>
                         </td>
                     </tr>
                 </tbody>

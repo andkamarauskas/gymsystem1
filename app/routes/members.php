@@ -11,6 +11,7 @@ Route::group(array('before' => 'superadmin'), function()
     Route::post('members/create','MembersController@create_post');
     Route::get('members/update/{id}','MembersController@update');
     Route::post('members/update/{id}','MembersController@update_post');
+    Route::get('members/delete/{id}','MembersController@delete');
     
     Route::get('members/packages/{id}','MembersController@packages');
     Route::post('members/packages/{id}','MembersController@packages_post');

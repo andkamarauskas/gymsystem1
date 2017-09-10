@@ -302,4 +302,11 @@ class MembersController extends BaseController {
         $memberpackage->delete();
         echo 1;
     }
+
+    public function delete()
+    {
+        $this->data['member'] = Member::find(Request::segment(3));
+        $this->data['member']->delete();
+        return Redirect::to('members')->with('success','Member was deleted.');
+    }
 }
