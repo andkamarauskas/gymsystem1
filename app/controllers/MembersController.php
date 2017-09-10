@@ -221,7 +221,16 @@ class MembersController extends BaseController {
                         $expiration = strtotime(date("Y-m-d")) + (30 * 86400);
                         $member_package->expiration = date('Y-m-d', $expiration);
                     }
-                    
+                    if($package->cycle->name == '2 month')
+                    {
+                        $expiration = strtotime(date("Y-m-d")) + (60 * 86400);
+                        $member_package->expiration = date('Y-m-d', $expiration);
+                    }
+                    if($package->cycle->name == '3 month')
+                    {
+                        $expiration = strtotime(date("Y-m-d")) + (90 * 86400);
+                        $member_package->expiration = date('Y-m-d', $expiration);
+                    }
                     if($package->cycle->name == 'annually')
                     {
                         $expiration = strtotime(date("Y-m-d")) + (365 * 86400);
@@ -284,7 +293,16 @@ class MembersController extends BaseController {
             $expiration = strtotime($member_package->expiration) + (30 * 86400);
             $member_package->expiration = date('Y-m-d', $expiration);
         }
-        
+        if($member_package->package->cycle->name == '2 month')
+        {
+            $expiration = strtotime($member_package->expiration) + (60 * 86400);
+            $member_package->expiration = date('Y-m-d', $expiration);
+        }
+        if($member_package->package->cycle->name == '3 month')
+        {
+            $expiration = strtotime($member_package->expiration) + (90 * 86400);
+            $member_package->expiration = date('Y-m-d', $expiration);
+        }
         if($member_package->package->cycle->name == 'annually')
         {
             $expiration = strtotime($member_package->expiration) + (365 * 86400);
